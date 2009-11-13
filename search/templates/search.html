@@ -1,0 +1,19 @@
+<form action='' method="GET">
+	<label>{{ search.search_label }}</label>
+		{{ form.query }}
+	{% if form.query.errors %}
+		{% for error in form.query.errors %}
+			<span style="color: red;">{{ error }}</span>
+		{% endfor %}
+	{% endif %}
+	<input type="submit" {% if search.submit %}value="{{ search.submit }}"{% endif %} class="btn">
+</form>
+
+{% if results %}
+	<h2>{{ search.found }}: {{ results.count }}</h2>
+	{% for page in results %}
+		<h4><a href="{{ page.get_absolute_url }}">{{ page.get_title }}</a></h4>
+	{% endfor %}
+{% else %}
+	{% if query %}<h2>{{ search.not_found }}</h2>{% endif %}
+{% endif %}

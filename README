@@ -1,0 +1,7 @@
+Simple site search form plugin using Page.objects.search().
+It does not make multiword quries. It's as simple as can be.
+
+Put 'plugins.search' in your INSTALLED_APPS settings.py section.
+You also need to sync your db (python manage.py syncdb)
+
+Enjoy.
