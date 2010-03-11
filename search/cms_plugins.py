@@ -1,8 +1,8 @@
 from django.utils.translation import ugettext_lazy as _
 from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
-from plugins.search.models import Search
-from plugins.search.forms import SearchForm
+from models import Search
+from forms import SearchForm
 
 class SearchPlugin(CMSPluginBase):
     model = Search
